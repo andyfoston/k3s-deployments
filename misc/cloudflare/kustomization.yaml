@@ -5,7 +5,7 @@ resources:
   - cloudflare-ingress-sealed-secret.yaml
 
 helmCharts:
-  - name: cloudflare-tunnel
+  - name: cloudflare
     repo: https://cloudflare.github.io/helm-charts
     version: 0.3.2
     releaseName: cloudflare-tunnel
