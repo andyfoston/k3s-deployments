@@ -9,6 +9,13 @@ spec:
     repoURL: https://github.com/andyfoston/k3s-deployments
     targetRevision: HEAD
     path: misc/cloudflare
+    kustomize:
+      pluginData:
+        # For newer Argo CD versions (v2.6+)
+        helm: true
+      # For older Argo CD versions or as a fallback:
+      commonAnnotations:
+        "argocd.argoproj.io/sync-options": "EnableHelm=true"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: cloudflare
