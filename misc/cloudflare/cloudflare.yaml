@@ -11,7 +11,7 @@ spec:
     path: misc/cloudflare
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: kube-system
+    namespace: cloudflare
   syncPolicy:
     automated:
       prune: true
