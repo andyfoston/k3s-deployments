@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/andyfoston/k3s-deployments
-    targetRevision: main
+    targetRevision: HEAD
     path: misc/cloudflare
   destination:
     server: "https://kubernetes.default.svc"
