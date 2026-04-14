@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflare
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/andyfoston/k3s-deployments
+    targetRevision: HEAD
+    path: misc/cloudflare
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

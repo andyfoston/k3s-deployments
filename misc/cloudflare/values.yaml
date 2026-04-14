@@ -1,0 +1,4 @@
+cloudflare:
+  tunnelName: k3s-ingress
+  secretName: k3s-ingress
+  ingress: []
