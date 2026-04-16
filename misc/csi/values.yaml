@@ -1,7 +1,7 @@
 ---
 clientInfoSecret:
   create: false
-  name: "client-info-secret"
+  name: "synology-csi"
 controller:
   affinity: { }
   nodeSelector: { }
