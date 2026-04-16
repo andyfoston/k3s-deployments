@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - synology-csi-sealedsecret.yaml
+  - storageclass.yaml
 
 helmCharts:
   - name: synology-csi
