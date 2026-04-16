@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - pushovercredentials-sealedsecret.yaml
+
+helmCharts:
+  - name: kube-prometheus-stack
+    repo: 'https://prometheus-community.github.io/helm-charts'
+    version: 57.2.0 # Replace with the latest stable chart version
+    releaseName: kube-prometheus-stack
+    namepsace: monitoring
+    valuesFiles: values.yaml
