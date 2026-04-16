@@ -10,4 +10,5 @@ helmCharts:
     version: 57.2.0 # Replace with the latest stable chart version
     releaseName: kube-prometheus-stack
     namespace: monitoring
+    includeCRDs: true
     valuesFile: values.yaml
