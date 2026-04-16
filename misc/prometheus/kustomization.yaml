@@ -9,5 +9,5 @@ helmCharts:
     repo: 'https://prometheus-community.github.io/helm-charts'
     version: 57.2.0 # Replace with the latest stable chart version
     releaseName: kube-prometheus-stack
-    namepsace: monitoring
+    namespace: monitoring
     valuesFiles: values.yaml
