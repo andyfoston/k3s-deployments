@@ -53,16 +53,6 @@ spec:
                 secretKeyRef:
                   name: nest-heating-boost
                   key: client_secret
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: nest-heating-boost
-                  key:  redis_password
-            - name: REDIS_ENDPOINT
-              valueFrom:
-                secretKeyRef:
-                  name: nest-heating-boost
-                  key: redis_endpoint
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
