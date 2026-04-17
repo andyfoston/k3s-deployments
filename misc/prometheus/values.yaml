@@ -2,6 +2,8 @@ alertmanager:
   alertmanagerSpec:
     # Replicas for high availability (optional)
     replicas: 1
+    secrets:
+      - pushover-credentials
   config:
     global:
       resolve_timeout: 5m
