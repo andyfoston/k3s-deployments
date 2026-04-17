@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-web-app-deploy
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://github.com/andyfoston/k3s-deployments.git'
+      targetRevision: HEAD
+      path: charts/nest-heating-boost  # Path to the directory containing Chart.yaml
+    
+      helm:
+        valuesObject:
+          image:
+            tag: fc31013
+    - repoURL: 'https://github.com/andyfoston/k3s-deployments.git'
+      targetRevision: HEAD
+      path: apps/nest-heating-boost
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: nest
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
