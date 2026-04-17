@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-web-app-deploy
+  name: nest-heating-boost
   namespace: argocd
 spec:
   project: default
@@ -13,7 +13,7 @@ spec:
       helm:
         valuesObject:
           image:
-            tag: fc31013
+            tag: fc31012
     - repoURL: 'https://github.com/andyfoston/k3s-deployments.git'
       targetRevision: HEAD
       path: apps/nest-heating-boost
