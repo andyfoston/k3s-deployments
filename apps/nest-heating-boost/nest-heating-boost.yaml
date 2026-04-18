@@ -13,7 +13,7 @@ spec:
       helm:
         valuesObject:
           image:
-            tag: 86dd7d2
+            tag: fc31013
     - repoURL: 'https://github.com/andyfoston/k3s-deployments.git'
       targetRevision: HEAD
       path: apps/nest-heating-boost
