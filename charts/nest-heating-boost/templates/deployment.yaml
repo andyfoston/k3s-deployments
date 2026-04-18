@@ -53,6 +53,16 @@ spec:
                 secretKeyRef:
                   name: nest-heating-boost
                   key: client_secret
+            - name: HASH_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: hash_key
+                  name: nest-heating-boost
+            - name: BLOCK_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: block_key
+                  name: nest-heating-boost
             - name: OVERRIDE_REDIRECT_URL
               value: https://heating.foston.me/code
           securityContext:
