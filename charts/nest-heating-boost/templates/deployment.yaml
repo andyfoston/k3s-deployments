@@ -54,7 +54,7 @@ spec:
                   name: nest-heating-boost
                   key: client_secret
             - name: OVERRIDE_REDIRECT_URL
-              value: https://heating.foston.me
+              value: https://heating.foston.me/code
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
