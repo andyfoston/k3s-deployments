@@ -14,6 +14,9 @@ alertmanager:
       repeat_interval: 12h
       receiver: 'pushover-notifications'
       routes:
+        - receiver: 'null'
+          matchers:
+            - alertname = "Watchdog"
         - receiver: 'pushover-notifications'
           matchers:
             - severity="critical"
@@ -37,3 +40,6 @@ prometheus:
 defaultRules:
   rules:
     kubeProxy: false
+    kubeControllerManager: false
+    kubeSchedulerAlerting: false
+    kubeSchedulerRecording: false
