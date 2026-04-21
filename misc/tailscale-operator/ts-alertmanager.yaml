@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
   name: alertmanager-ts
-  namespace: observability
+  namespace: monitoring
 spec:
   ingressClassName: tailscale
   rules:
