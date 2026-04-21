@@ -29,6 +29,7 @@ alertmanager:
             priority: '{{ if eq .Status "firing" }}1{{ else }}0{{ end }}'
             title: '{{ template "pushover.default.title" . }}'
             message: '{{ template "pushover.default.message" . }}'
+      - name: 'null'
 
 grafana:
   enabled: true
