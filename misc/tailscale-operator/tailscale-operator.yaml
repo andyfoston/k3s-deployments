@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tailscale-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/andyfoston/k3s-deployments
+    targetRevision: HEAD
+    path: misc/tailscale-operator
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: tailscale
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
