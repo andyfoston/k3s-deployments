@@ -3,6 +3,8 @@ kind: Kustomization
 
 resources:
   - pushover-credentials-sealedsecret.yaml
+  - ts-alertmanager.yaml
+  - ts-prometheus.yaml
 
 helmCharts:
   - name: kube-prometheus-stack
