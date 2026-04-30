@@ -19,4 +19,4 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - alertmanager
+    - prometheus
